@@ -184,6 +184,7 @@ R-studio sin pakke "pwr" kan brukes til å regne ut statistisk power for et data
 #| warning: false
 #| label: "tbl-seven"
 #| tbl-cap: "Oppgave 7"
+library(pwr)
 pwr8 <- pwr.t.test(n = 8, sig.level = 0.05, d = 1.5/3, type = "one.sample")
 pwr40 <- pwr.t.test(n = 40, sig.level = 0.05, d = 1.5/3, type = "one.sample")
 ```

@@ -6,7 +6,7 @@ editor_options:
 execute: 
   echo: false 
   warning: false 
-bibliography: referanser/eksporterte elementer.bib
+bibliography: referanser/referanser.bib
 ---
 
 # Arbeidskrav 4 -Drawing inference from statistical models and power
@@ -59,7 +59,7 @@ Måten man finner ut hvor mange deltakere en studie bør ha er å gjennomføre a
 
 Så hva er forskjellen på en studie med 8 deltakere og en studie med 40 deltakere? I teorien kan en studie med 8 deltakere gi statistisk signifikante resultater gitt en stor effektstørrelse, stor homogenitet blant deltakerne og riktige antagelser i den statistiske analysen. I praksis er dette vanskelig å få til og man ender opp med en studie med lav statistisk styrke. Hvis det er for få deltagere i studien, blir det ofte resultater som tyder på en reell effekt, men som ikke er statistisk signifikant. En p-verdi lavere enn 0,05 kan være forskjellen mellom å kunne hevde noe med sikkerhet eller kun å kunne si at flere studier er nødvendig for å kunne si noe med sikkerhet [@pripp2015].
 
-Studier med lav statistisk styrke på grunn av for få inkluderte deltagere er sterkt kritisert i det vitenskapelige miljøet. Det er sagt at studier med lav statistisk styrke er uetiske, fordi de utsetter deltagerne for unødig stor risiko og byrde uten at de kan gi tilstrekkelig vitenskapelig innsikt [@halpern2002]. Andre hevder derimot at det etiske forholdet mellom deltagerens byrde og studiens vitenskapelige verdi kan være mindre fordelaktig for store enn for små studier. De mener at studier med lav statistisk styrke ikke nødvendigvis er uetiske og at en statistisk styrke på minst 80% ikke er et generelt krav til en etisk forsvarlig studie [@bacchetti2005].
+Studier med lav statistisk styrke på grunn av for få inkluderte deltagere er sterkt kritisert i det vitenskapelige miljøet. Det er sagt at studier med lav statistisk styrke er uetiske, fordi de utsetter deltagerne for unødig stor risiko og byrde uten at de kan gi tilstrekkelig vitenskapelig innsikt [@halpern2002]. Andre hevder derimot at det etiske forholdet mellom deltagerens byrde og studiens vitenskapelige verdi kan være mindre fordelaktig for store enn for små studier. De mener at studier med lav statistisk styrke ikke nødvendigvis er uetiske og at en statistisk styrke på minst 80% ikke er et generelt krav til en etisk forsvarlig studie [@bachetti2005]. 
 
 Dersom man inkluderer for mange testpersoner i en studie medfører gjerne unødvendig bruk av tid og ressurser og at man utsette for mange personer for unødvendig stor risiko og byrde. For å oppsummere kan man si at forskjellen på en studie på 8 og 48 deltakere, gitt lik effektstørrelse, homogenitet og like antagelser, er at studien med flest deltakere vil gi høyere statistisk styrke. Men, dersom effektstørrelsen er høy og homogeniteten er stor har man utsatt for mange mennesker for et potensielt unødvendig høyt stress, risiko og generell byrde.
 

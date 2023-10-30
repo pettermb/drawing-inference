@@ -1,0 +1,89 @@
+
+
+##Simulering av datasett
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: "tbl-eight1"
+#| tbl-cap: "Oppgave 8_simulering"
+
+population <- rnorm(1000000, mean = 0, sd = 3)
+
+
+# Create data frames to store the model estimates
+results_8 <- data.frame(estimate = rep(NA, 1000), 
+                      se = rep(NA, 1000), 
+                      pval = rep(NA, 1000), 
+                      n = 8)  
+
+results_40 <- data.frame(estimate = rep(NA, 1000), 
+                      se = rep(NA, 1000), 
+                      pval = rep(NA, 1000), 
+                      n = 40)
+
+# A for loop used to sample 1000 studies, each iteration (i) will draw a new sample
+# from the population. 
+
+for(i in 1:1000) {
+  
+  # Draw a sample 
+  samp1 <- data.frame(y = sample(population, 8, replace = FALSE))
+  samp2 <- data.frame(y = sample(population, 40, replace = FALSE))
+
+  # Model the data
+  m1 <- lm(y ~ 1, data = samp1)
+  m2 <- lm(y ~ 1, data = samp2)
+  
+  # Extract values from the models
+  results_8[i, 1] <- coef(summary(m1))[1, 1]
+  results_8[i, 2] <- coef(summary(m1))[1, 2]
+  results_8[i, 3] <- coef(summary(m1))[1, 4]
+
+  results_40[i, 1] <- coef(summary(m2))[1, 1]
+  results_40[i, 2] <- coef(summary(m2))[1, 2]
+  results_40[i, 3] <- coef(summary(m2))[1, 4]
+  
+  
+}
+
+
+# Save the results in a combined data frame
+
+results_null <- bind_rows(results_8, results_40)
+```
+
+
+##Histogram
+```{r}
+#| echo: false
+#| warning: false
+#| label: "tbl-eight2"
+#| tbl-cap: "Oppgave 8 _histogram"
+library(tidyverse)
+results_null %>%
+  ggplot(aes(pval)) + 
+  geom_histogram() +
+  facet_wrap(~ n)
+```
+
+##Tabell for antalle falske positive signifikantnivåer
+```{r}
+#| echo: false
+#| warning: false
+#| label: "tbl-eight3"
+#| tbl-cap: "Oppgave 8_tabell for signifkans nivå"
+library(tidyverse)
+library(ggplot2)
+set.seed(2)
+results_null %>%
+  filter(pval < 0.05) %>%
+  group_by(n) %>%
+  summarise(count = n(),
+            percent = (n()/1000) * 100) %>% #For å komme fram til prosent
+  gt() %>% 
+  cols_(n = "Prøve størrelse",
+             count = "Signifikante resultat",
+             percent = "Prosent (%)")
+```
+

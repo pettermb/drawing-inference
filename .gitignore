@@ -21,6 +21,8 @@
 # RStudio files
 .Rproj.user/
 
+drawing-inference.Rproj
+
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf

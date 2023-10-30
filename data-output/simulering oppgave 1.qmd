@@ -1,0 +1,26 @@
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: "tbl-one"
+#| tbl-cap: "Oppgave 1"
+
+library(tidyverse)
+library(exscidata)
+library(ggplot2)
+set.seed(1)
+population <- rnorm(1000000, mean = 1.5, sd = 3)
+
+
+samp1 <- data.frame(y = sample(population, 8, replace = FALSE))
+
+samp2 <- data.frame(y = sample(population, 40, replace = FALSE))
+
+
+m1 <- lm(y ~ 1, data = samp1)
+m2 <- lm(y ~ 1, data = samp2)
+
+summary(m1)
+summary(m2)
+```
+

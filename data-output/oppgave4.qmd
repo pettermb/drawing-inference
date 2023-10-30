@@ -1,0 +1,24 @@
+
+## Oppgave 4
+
+Utregning og framstilling av:
+
+-   Standardavviket av estimatet
+
+-   Gjennomsnittet av stander error
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(exscidata)
+results %>% #kommer frå simuleringene som blei gjort i over.
+    group_by(n) %>% 
+  summarise(sd_estimate = sd(estimate, na.rm = T),
+            mean_se = mean(se, na.rm = T)) %>%
+  gt() %>% 
+  cols_label(n = "Antall deltakere",
+             sd_estimate = "SD  estimate",
+             mean_se = "Gjennomsnittet av SE") %>% 
+  tab_footnote(footnote = "Forkortelser: SD = standard avvik; SE=standard error")
+```
+
